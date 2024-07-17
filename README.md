@@ -10,10 +10,10 @@ The Fashion-MNIST dataset contains grayscale images of fashion items. Each image
 
 - Training set: 60,000 images
 - Test set: 10,000 images
-- The dataset can be downloaded from Kaggle's Fashion-MNIST dataset page.
+- The dataset can be downloaded from [Kaggle's Fashion-MNIST dataset page](https://www.kaggle.com/datasets/zalando-research/fashionmnist/).
 
 ## Requirements
-- dlib: Install dlib from dlib's official website or via package managers.
+- dlib: Install dlib from [dlib's official website](http://dlib.net/) or via package managers.
 - CUDA: Ensure you have a compatible CUDA version installed for GPU acceleration.
 - C++ compiler: Ensure your C++ compiler supports C++11 or later.
 ## Setup
