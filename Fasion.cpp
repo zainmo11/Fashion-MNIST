@@ -6,6 +6,19 @@
 
 
 // Define the network
+/**
+ * @brief Define the neural network type.
+ *
+ * This network is a simple convolutional neural network (CNN) for multiclass classification.
+ * The architecture includes:
+ * - An input layer for 28x28 images.
+ * - A convolutional layer with 16 filters of size 5x5 followed by ReLU activation.
+ * - A max pooling layer with 2x2 pooling size.
+ * - A fully connected layer with 120 neurons followed by ReLU activation.
+ * - Another fully connected layer with 84 neurons followed by ReLU activation.
+ * - A final fully connected layer with 10 neurons for the output classes.
+ * - A loss layer for multiclass classification using logarithmic loss.
+ */
 using net_type = dlib::loss_multiclass_log<
     dlib::fc<10,
     dlib::relu<dlib::fc<84,
@@ -15,6 +28,17 @@ using net_type = dlib::loss_multiclass_log<
     dlib::input<dlib::matrix<unsigned char>>
     >>>>>>>>>;
 
+/**
+ * @brief Loads images and labels from a CSV file.
+ *
+ * This function reads a CSV file where each row represents an image in the form of pixel values
+ * followed by the label. The CSV file format should have the label in the first column,
+ * followed by 28*28 pixel values.
+ *
+ * @param filename The path to the CSV file.
+ * @param images A vector to store the loaded images.
+ * @param labels A vector to store the corresponding labels.
+ */
 void load_csv(const std::string& filename, std::vector<dlib::matrix<unsigned char>>& images, std::vector<unsigned long>& labels) {
     std::ifstream file(filename);
     std::string line;
